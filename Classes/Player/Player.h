@@ -10,6 +10,7 @@
 
 class Player : public cocos2d::Sprite {
 public:
+
     static Player* create(const std::string& type);
 
     void listenToKeyboard(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event* event);
