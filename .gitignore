@@ -8,5 +8,5 @@
 *.idea
 *.xcodeproj
 .cocos-project.json
-
+utils.json
 

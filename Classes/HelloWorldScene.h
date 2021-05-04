@@ -27,6 +27,8 @@
 
 #include "cocos2d.h"
 #include "Player/Player.h"
+#include "network/WebSocket.h"
+#include "Network/SocketService.h"
 
 class HelloWorld : public cocos2d::Scene
 {
@@ -40,6 +42,9 @@ public:
     
     // implement the "static create()" method manually
     CREATE_FUNC(HelloWorld);
+
+    void connectToServer();
+
 private:
     Player *me = nullptr;
 };
