@@ -13,13 +13,19 @@ public:
 
     static Player* create(const std::string& type);
 
-    void listenToKeyboard(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event* event);
+    void listenToKeyPresses(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event* event);
+
+    void listenToKeyReleases(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event* event);
 
     void update(float delta) override;
 
 private:
+    enum Key {W, A, S, D};
+    static constexpr int StepLength = 10;
+
     float x = 520.;
     float y = 520.;
+    bool keyPressed[4] = {};
 };
 
 

@@ -127,7 +127,8 @@ bool HelloWorld::init()
     me->scheduleUpdate();
 
     auto keyboardListener = EventListenerKeyboard::create();
-    keyboardListener->onKeyPressed = CC_CALLBACK_2(Player::listenToKeyboard, me);
+    keyboardListener->onKeyPressed = CC_CALLBACK_2(Player::listenToKeyPresses, me);
+    keyboardListener->onKeyReleased = CC_CALLBACK_2(Player::listenToKeyReleases, me);
 
     _eventDispatcher->addEventListenerWithSceneGraphPriority(keyboardListener, this);
     return true;
