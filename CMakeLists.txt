@@ -120,7 +120,7 @@ endif()
 set(all_code_files
     ${GAME_HEADER}
     ${GAME_SOURCE}
-    )
+        Classes/Player/Player.cpp Classes/Player/Player.h)
 if(NOT ANDROID)
     add_executable(${APP_NAME} ${all_code_files})
 else()
