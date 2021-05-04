@@ -15,6 +15,11 @@ public:
 
     void listenToKeyboard(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event* event);
 
+    void update(float delta) override;
+
+private:
+    float x = 520.;
+    float y = 520.;
 };
 
 

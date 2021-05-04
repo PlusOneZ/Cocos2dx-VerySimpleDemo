@@ -122,15 +122,14 @@ bool HelloWorld::init()
     }
     else
     {
-        // position the sprite on the center of the screen
-        me->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
-
-        // add the sprite as a child to this layer
         this->addChild(me, 0);
     }
+    me->scheduleUpdate();
 
     auto keyboardListener = EventListenerKeyboard::create();
     keyboardListener->onKeyPressed = CC_CALLBACK_2(Player::listenToKeyboard, me);
+
+    _eventDispatcher->addEventListenerWithSceneGraphPriority(keyboardListener, this);
     return true;
 }
 

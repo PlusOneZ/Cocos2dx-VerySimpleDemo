@@ -14,6 +14,7 @@ Player *Player::create(const std::string &type) {
     if (temp)
     {
         player->addChild(temp);
+        player->setPosition(player->x, player->y);
         player->autorelease();
         return player;
     }
@@ -22,5 +23,27 @@ Player *Player::create(const std::string &type) {
 
 void Player::listenToKeyboard(cocos2d::EventKeyboard::KeyCode keyCode,
                               cocos2d::Event *event) {
+    CCLOG("%d", keyCode);
+    using K = cocos2d::EventKeyboard::KeyCode;
+    if (keyCode == K::KEY_D)
+    {
+        x += 10;
+    }
+    if (keyCode == K::KEY_A)
+    {
+        x -= 10;
+    }
+    if (keyCode == K::KEY_W)
+    {
+        y += 10;
+    }
+    if (keyCode == K::KEY_S)
+    {
+        y -= 10;
+    }
+}
 
+void Player::update(float delta)
+{
+    this->setPosition(x, y);
 }
