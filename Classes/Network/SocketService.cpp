@@ -31,7 +31,7 @@ void SocketService::initSocket() {
     doc.Parse<0>(s.c_str());
     auto ip = doc["ip"].GetString();
     auto port = doc["port"].GetInt();
-    string str = string("tcp://") + ip + ":" + to_string(port);
+    string str = string("ws://") + ip + ":" + to_string(port);
     client = new WebSocket();
     client->init(*this, str);
 
